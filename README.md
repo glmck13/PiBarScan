@@ -1,5 +1,5 @@
 # PiBarScan
-Simple script to read &amp; process barcodes from a HID Bluetooth/USB scanner on a Raspberry Pi 
+Simple shell script to read &amp; process barcodes from a HID Bluetooth/USB scanner on a Raspberry Pi.  
 
 ## Background
 I wanted to connect a barcode scanner to my Raspberry Pi not only to scan product inventory, but also to launch commands on the Pi using specially crafted barcodes.  A search of barcode software on the web yielded two types of utilities:
