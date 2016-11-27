@@ -60,7 +60,7 @@ Device="${Device##*/event}"
 # Read barcode scanner until EOF
 #
 
-BARCODE=""
+export BARCODE=""
 
 unbuffer input-events -t 300 ${Device##*/event} |
 while read Stamp Type Key Value Action
