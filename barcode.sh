@@ -50,6 +50,10 @@ done
 
 done
 
+export DISPLAY=:0
+Desc=${Desc//\"/}
+Id=$(xinput --list | grep "$Desc") Id=${Id#*	id=} Id=${Id%	*}
+xinput --float $Id
 Device="${Device##*/event}"
 
 #
