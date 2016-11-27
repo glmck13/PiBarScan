@@ -13,4 +13,8 @@ After reasearching the input subsystem on Linux, and fiddling with lsinput, udev
 ## Usage
 You may need to "apt-get install xinput" if it's not already installed on your Pi.  Ditto for "ksh".  Otherwise, everything else needed by the barcode.sh script should already be loaded on your Pi.  
 
-Before running the tool, you'll first have to edit barcode.cfg to specify the commands for handling the incoming barcodes.  Each line of the tool is pipe-delimited.  The first field is a ksh-regex pattern for a class of barcodes, while the second field is the command to run when that barcode class is detected.  The $BARCODE variable can be passed via the command line, or can be accessed via the environment.
+Before running the tool, you'll first have to edit barcode.cfg to specify the commands for handling incoming barcodes.  Each line of the config file is pipe-delimited.  The first field is a ksh-regex pattern for a class of barcodes, while the second field is the command to run when that barcode class is detected.  The $BARCODE variable can be passed via the command line, or can be accessed in the environment.  
+
+You can launch the barcode.sh script from a term window - either in the foreground or background (nohup) - or launch it on system startup from /etc/rc.local.  
+
+The current implementation admittedly takes some shortcuts, since it doesn't attempt to process SHIFT or other special keystrokes.  In practice, this doesn't pose much of a problem since the common barcode specs (UPC, EAN, etc.) primarily use basic alphanumerics.
