@@ -63,7 +63,6 @@ Device="${Device##*/event}"
 #
 # Read barcode scanner until EOF
 #
-
 export BARCODE=""
 
 unbuffer input-events -t 300 ${Device##*/event} |
