@@ -50,6 +50,11 @@ done
 
 done
 
+#
+# Stop barcodes from being sent to active window: we'll use input-events
+# to grab the data
+#
+
 export DISPLAY=:0
 Desc=${Desc//\"/}
 Id=$(xinput --list | grep "$Desc") Id=${Id#*	id=} Id=${Id%	*}
