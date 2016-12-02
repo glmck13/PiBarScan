@@ -1,6 +1,9 @@
 # PiBarScan
 Simple shell script to read &amp; process barcodes from a HID Bluetooth/USB scanner on a Raspberry Pi.  
 
+## Update, Remote Execution: Dec 2, 2016
+I realized the tool would be much more powerful if barcodes could be read on one host but executed on another.  So I split the barcode.sh script into two: readcode.sh and execcode.sh.  In a single host environment, simply leave the REMOTE variable in the barcode.sh script commented out.  In a multi-host environment, install readcode.sh on the system that connects to the Bluetooth scanner (the "REMOTE" host), while depositing execcode.sh & barcode.cfg on your other machine (the "LOCAL" host).  Then edit the fields within the REMOTE variable in barcode.sh to populate a host name/address, user, password, and path.  
+
 ## Background
 I wanted to connect a barcode scanner to my Raspberry Pi not only to scan product inventory, but also to launch commands on the Pi using specially crafted barcodes.  A search of barcode software on the web yielded two types of utilities:
 * those that read barcodes from stdin
