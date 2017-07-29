@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-CONFIG=barcode.cfg
+CONFIG=barcode.conf
 
 while read BARCODE
 do
