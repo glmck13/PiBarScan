@@ -14,7 +14,13 @@ Unfortunately, the stdin-based tools require the HID focus to be set on the wind
 After reasearching the input subsystem on Linux, and fiddling with lsinput, udevadm, and input-events, I realized I could implement a very simple utility completely within shell for reading & processing barcodes.  Moreover, the tool can automatically detect whenever the barcode scanner connects (in the case of Bluetooth devices), and can be executed as a background process.
 
 ## Usage
-You may need to "apt-get install xinput" if it's not already installed on your Pi.  Ditto for "ksh".  Otherwise, everything else needed by the barcode.sh script should already be loaded on your Pi.  
+You may need to install the following packages if they're not already installed on your Pi:
+```
+apt-get install xinput # xinput
+apt-get install input-utils # lsinput
+apt-get install ksh # ksh
+```
+Otherwise, everything else needed by the barcode.sh script should already be loaded on your Pi.  
 
 Before running the tool, you'll first have to edit barcode.cfg to specify the commands for handling incoming barcodes.  Each line of the config file is pipe-delimited.  The first field is a glob pattern for a class of barcodes, while the second field is the command to run when that barcode class is detected.  The $BARCODE variable can be passed via the command line, or can be accessed in the environment.  
 
